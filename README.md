@@ -1,6 +1,6 @@
 # CPA Study Tracker Public Site
 
-Static public build for GitHub Pages or another static host.
+React/Vite static public build for GitHub Pages.
 
 Safety checks:
 - No PDF files are included.
