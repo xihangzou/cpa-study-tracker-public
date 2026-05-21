@@ -1,0 +1,8 @@
+*.pdf
+*.xlsx
+*.xls
+*.sqlite3
+*.sqlite3-*
+backend/
+node_modules/
+.DS_Store
