@@ -5,5 +5,6 @@ React/Vite static public build for GitHub Pages.
 Safety checks:
 - No PDF files are included.
 - No SQLite database or backend files are included.
-- The public build includes only question metadata needed by the task tracker.
+- The public build includes question metadata and public-safe material titles/page counts only.
+- PDF paths, folders, filenames, and local filesystem paths are removed from material data.
 - Progress is stored in each browser's local storage on the public static site.
