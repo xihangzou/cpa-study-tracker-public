@@ -194,15 +194,55 @@
               <p class="eyebrow">実行</p>
               <h2 id="plannerTitle">学習計画</h2>
             </div>
-            <p class="summary-text">週間計画から次のブロックを選び、クイック記録または詳細フォームで実績を残します。</p>
+            <p class="summary-text">財務会計の問題単位で、いつ何を解くかを管理します。延期・前倒し・ペース変更で計画を組み直せます。</p>
           </div>
+
+          <section class="panel schedule-control-panel">
+            <div class="panel-header">
+              <h3>計画コントロール</h3>
+              <span>問題ベースで自動再計算</span>
+            </div>
+            <div class="toolbar-grid schedule-control-grid">
+              <label>
+                <span>計画開始日</span>
+                <input id="scheduleStartDate" type="date" />
+              </label>
+              <label>
+                <span>ペース</span>
+                <select id="schedulePace">
+                  <option value="0.75">ゆっくり 75%</option>
+                  <option value="1">標準 100%</option>
+                  <option value="1.25">速め 125%</option>
+                  <option value="1.5">追い込み 150%</option>
+                  <option value="1.75">超集中 175%</option>
+                </select>
+              </label>
+              <div class="schedule-control-actions">
+                <button class="ghost-button" type="button" data-schedule-shift="-1">1日前倒し</button>
+                <button class="ghost-button" type="button" data-schedule-shift="1">1日延期</button>
+                <button class="ghost-button" type="button" data-schedule-pace="-0.25">少しゆっくり</button>
+                <button class="ghost-button" type="button" data-schedule-pace="0.25">少し速く</button>
+                <button id="scheduleResetBtn" class="ghost-button" type="button">今日から再計画</button>
+              </div>
+            </div>
+          </section>
+
+          <div id="scheduleMetricGrid" class="metric-grid schedule-metrics"></div>
 
           <section class="panel">
             <div class="panel-header">
-              <h3>今週の計画</h3>
+              <h3>質問別ガント</h3>
               <span id="weeklyPlanLabel"></span>
             </div>
-            <div id="weeklyPlan" class="plan-grid"></div>
+            <div id="weeklyPlan" class="schedule-gantt"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h3>28日カレンダー</h3>
+              <span>日別の予定問数と実績</span>
+            </div>
+            <div id="scheduleCalendar" class="schedule-calendar"></div>
           </section>
 
           <div class="two-column wide-left">

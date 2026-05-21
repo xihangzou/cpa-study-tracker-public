@@ -4,6 +4,10 @@ const INITIAL_START_DATE = "2026-05-21";
 const API_BASE = window.CPA_PUBLIC_STATIC ? null : ["http:", "https:"].includes(location.protocol) ? "" : null;
 const BACKEND_SAVE_DELAY = 500;
 const CURRENT_STATE_VERSION = 3;
+const SCHEDULE_WINDOW_DAYS = 28;
+const SCHEDULE_PACE_MIN = 0.75;
+const SCHEDULE_PACE_MAX = 1.75;
+const SCHEDULE_PACE_STEP = 0.25;
 
 const SUBJECTS = [
   {
@@ -292,6 +296,11 @@ const els = {
   sessionConfidence: document.getElementById("sessionConfidence"),
   sessionNotes: document.getElementById("sessionNotes"),
   sessionFormHint: document.getElementById("sessionFormHint"),
+  scheduleStartDate: document.getElementById("scheduleStartDate"),
+  schedulePace: document.getElementById("schedulePace"),
+  scheduleResetBtn: document.getElementById("scheduleResetBtn"),
+  scheduleMetricGrid: document.getElementById("scheduleMetricGrid"),
+  scheduleCalendar: document.getElementById("scheduleCalendar"),
   weeklyPlan: document.getElementById("weeklyPlan"),
   weeklyPlanLabel: document.getElementById("weeklyPlanLabel"),
   reviewQueue: document.getElementById("reviewQueue"),
@@ -411,6 +420,19 @@ function attachEvents() {
     state.settings.weeklyTarget = clamp(Number(els.weeklyTargetInput.value) || 28, 1, 80);
     saveAndRender();
   });
+  els.scheduleStartDate.addEventListener("change", () => {
+    state.settings.scheduleStartDate = els.scheduleStartDate.value || todayISO();
+    saveAndRender();
+  });
+  els.schedulePace.addEventListener("change", () => {
+    state.settings.schedulePace = normalizeSchedulePace(Number(els.schedulePace.value));
+    saveAndRender();
+  });
+  els.scheduleResetBtn.addEventListener("click", () => {
+    state.settings.scheduleStartDate = todayISO();
+    notify("今日からの計画に戻しました。");
+    saveAndRender();
+  });
   els.exportBtn.addEventListener("click", exportBackup);
   els.importBtn.addEventListener("click", () => els.importFile.click());
   els.importFile.addEventListener("change", importBackup);
@@ -519,6 +541,22 @@ function attachEvents() {
   });
 
   document.addEventListener("click", (event) => {
+    const scheduleShift = event.target.closest("[data-schedule-shift]");
+    if (scheduleShift) {
+      const amount = Number(scheduleShift.dataset.scheduleShift || 0);
+      state.settings.scheduleStartDate = addDays(scheduleStartDate(), amount);
+      notify(amount > 0 ? "計画を1日延期しました。" : "計画を1日前倒ししました。");
+      saveAndRender();
+      return;
+    }
+    const schedulePace = event.target.closest("[data-schedule-pace]");
+    if (schedulePace) {
+      const amount = Number(schedulePace.dataset.schedulePace || 0);
+      state.settings.schedulePace = normalizeSchedulePace(schedulePaceValue() + amount);
+      notify(`ペースを${Math.round(schedulePaceValue() * 100)}%にしました。`);
+      saveAndRender();
+      return;
+    }
     const deleteSession = event.target.closest("[data-delete-session]");
     if (deleteSession) {
       const id = deleteSession.dataset.deleteSession;
@@ -597,6 +635,8 @@ function attachEvents() {
 function setInitialFormValues() {
   els.examDateInput.value = state.settings.examDate;
   els.weeklyTargetInput.value = state.settings.weeklyTarget;
+  els.scheduleStartDate.value = scheduleStartDate();
+  els.schedulePace.value = String(schedulePaceValue());
   els.sessionDate.value = todayISO();
   els.paperDate.value = todayISO();
   updateSessionResourceOptions();
@@ -617,6 +657,8 @@ function switchView(viewName) {
 function render() {
   els.examDateInput.value = state.settings.examDate;
   els.weeklyTargetInput.value = state.settings.weeklyTarget;
+  els.scheduleStartDate.value = scheduleStartDate();
+  els.schedulePace.value = String(schedulePaceValue());
   updateSessionResourceOptions();
   renderDashboard();
   renderFinancial();
@@ -1078,47 +1120,148 @@ function renderPlanner() {
 }
 
 function renderWeeklyPlan() {
-  const allocations = weeklyAllocations();
-  const plan = buildWeeklyPlan(allocations);
-  const plannedHours = sum(plan.map((block) => block.hours));
-  els.weeklyPlanLabel.textContent = `${plan.length}ブロック · ${formatHours(plannedHours)}予定`;
-  els.weeklyPlan.innerHTML = plan.map((block) => {
-    const resource = resourceById(block.resourceId);
-    const question = block.questionId ? questionById(block.questionId) : null;
-    const useButton = question
-      ? `<button class="primary-action" type="button" data-focus-question="${question.id}">問題へ</button>`
-      : block.unitId
-      ? `<button class="ghost-button" type="button" data-use-fin-unit="${block.unitId}">フォームに入れる</button>`
-      : resource
-        ? `<button class="ghost-button" type="button" data-use-resource="${resource.id}">フォームに入れる</button>`
-        : "";
-    const quickButton = question
-      ? `<button class="ghost-button" type="button" data-jump-view="questions">一覧を開く</button>`
-      : block.unitId
-      ? `<button class="primary-action" type="button" data-quick-fin-unit="${block.unitId}" data-minutes="${Math.round(block.hours * 60)}">記録</button>`
-      : `<button class="primary-action" type="button" data-quick-log="${block.resourceId || block.subject}" data-minutes="${Math.round(block.hours * 60)}">記録</button>`;
-    return `
-      <article class="plan-card">
-        <div class="plan-topline">
-          <strong>${escapeHtml(block.day)}</strong>
-          <span class="status-pill">${formatHours(block.hours)}</span>
-        </div>
-        <h4>${escapeHtml(block.title)}</h4>
-        <p>${escapeHtml(block.detail)}</p>
-        <div class="resource-meta">
-          <span class="status-pill">${escapeHtml(subjectById(block.subject).short)}</span>
-          <span class="status-pill">${escapeHtml(block.mode)}</span>
-          ${block.questionIds?.length ? `<span class="status-pill">${block.questionIds.length}問</span>` : ""}
-          ${resource?.pages ? `<span class="status-pill">${resource.pages}p</span>` : ""}
-        </div>
-        <div class="plan-actions">
-          ${resource?.path ? `<a href="${encodeURI(resource.path)}" target="_blank" rel="noreferrer">開く</a>` : ""}
-          ${useButton}
-          ${quickButton}
-        </div>
-      </article>
-    `;
-  }).join("");
+  const schedule = buildSchedulePlan();
+  const summary = summarizeSchedule(schedule);
+  els.weeklyPlanLabel.textContent = `${schedule.length}日 · ${summary.totalQuestions}問 · ${formatHours(summary.plannedHours)}予定`;
+  els.scheduleMetricGrid.innerHTML = renderScheduleMetrics(summary);
+  els.weeklyPlan.innerHTML = renderScheduleGantt(schedule);
+  els.scheduleCalendar.innerHTML = renderScheduleCalendar(schedule);
+}
+
+function renderScheduleMetrics(summary) {
+  const deltaClass = summary.deltaQuestions >= 0 ? "ready" : "review";
+  const deltaLabel = summary.deltaQuestions >= 0 ? `+${summary.deltaQuestions}問` : `${summary.deltaQuestions}問`;
+  return [
+    {
+      label: "計画進捗",
+      value: `${summary.expectedPct}%`,
+      note: `今日まで ${summary.expectedByToday}/${summary.totalQuestions}問予定`,
+    },
+    {
+      label: "実績進捗",
+      value: `${summary.actualPct}%`,
+      note: `予定内 ${summary.actualScheduled}/${summary.totalQuestions}問記録済み`,
+    },
+    {
+      label: "予定比差分",
+      value: deltaLabel,
+      note: summary.deltaQuestions >= 0 ? "予定より前倒し" : "今日までの未消化",
+      className: deltaClass,
+    },
+    {
+      label: "完了予測",
+      value: formatDateShort(summary.estimatedFinishDate),
+      note: `${summary.dailyCapacity}問/日ペース · 残り${summary.remainingQuestions}問`,
+    },
+  ]
+    .map(
+      (metric) => `
+        <article class="metric-card schedule-metric-card ${metric.className || ""}">
+          <span class="metric-label">${escapeHtml(metric.label)}</span>
+          <strong>${escapeHtml(metric.value)}</strong>
+          <span>${escapeHtml(metric.note)}</span>
+        </article>
+      `,
+    )
+    .join("");
+}
+
+function renderScheduleGantt(schedule) {
+  if (!schedule.length) return emptyState("予定できる問題がありません", "問題リストの状態を確認してください。");
+  const scale = Array.from({ length: SCHEDULE_WINDOW_DAYS }, (_, index) => addDays(scheduleStartDate(), index));
+  const rows = schedule
+    .map((block) => {
+      const stats = scheduleBlockStats(block);
+      const status = scheduleBlockStatus(block, stats);
+      const questions = block.questions.slice(0, 6);
+      const hiddenCount = Math.max(block.questions.length - questions.length, 0);
+      const firstQuestion = block.questions[0];
+      return `
+        <article class="gantt-task-row ${status}" style="--schedule-days: ${SCHEDULE_WINDOW_DAYS}">
+          <div class="gantt-task-copy">
+            <div class="plan-topline">
+              <strong>${escapeHtml(formatWeekday(block.date))}</strong>
+              <span class="status-pill ${status === "done" ? "done" : status === "overdue" ? "review" : ""}">${escapeHtml(scheduleStatusLabel(status))}</span>
+            </div>
+            <h4>${escapeHtml(block.title)}</h4>
+            <p>${escapeHtml(block.detail)}</p>
+            <div class="resource-meta">
+              <span class="status-pill">${block.questions.length}問</span>
+              <span class="status-pill">${formatMinutes(block.plannedMinutes)}</span>
+              <span class="status-pill">実績 ${stats.completed}/${stats.total}問</span>
+            </div>
+            <div class="question-chip-list">
+              ${questions
+                .map(
+                  (question) => `
+                    <button class="question-chip" type="button" data-focus-question="${question.id}">
+                      ${escapeHtml(questionShortLabel(question))}
+                    </button>
+                  `,
+                )
+                .join("")}
+              ${hiddenCount ? `<span class="status-pill">+${hiddenCount}問</span>` : ""}
+            </div>
+            <div class="plan-actions">
+              ${firstQuestion ? `<button class="primary-action" type="button" data-focus-question="${firstQuestion.id}">最初の問題へ</button>` : ""}
+              <button class="ghost-button" type="button" data-jump-view="questions">問題一覧</button>
+            </div>
+          </div>
+          <div class="gantt-track" aria-label="${escapeHtml(block.title)}の予定日">
+            <span class="gantt-task-bar" style="grid-column: ${block.dayIndex + 1} / span 1">
+              <span class="gantt-task-fill" style="width: ${stats.percent}%"></span>
+            </span>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+  return `
+    <div class="gantt-scroll">
+      <div class="gantt-scale" style="--schedule-days: ${SCHEDULE_WINDOW_DAYS}">
+        <span></span>
+        ${scale
+          .map(
+            (date) => `
+              <span class="${date === todayISO() ? "today" : ""}">
+                ${escapeHtml(parseDate(date).toLocaleDateString("ja-JP", { month: "numeric", day: "numeric" }))}
+              </span>
+            `,
+          )
+          .join("")}
+      </div>
+      ${rows}
+    </div>
+  `;
+}
+
+function renderScheduleCalendar(schedule) {
+  if (!schedule.length) return emptyState("予定できる問題がありません", "問題リストの状態を確認してください。");
+  return schedule
+    .map((block) => {
+      const stats = scheduleBlockStats(block);
+      const status = scheduleBlockStatus(block, stats);
+      const lastQuestion = block.questions[block.questions.length - 1];
+      const questionRange = block.questions.length ? `${questionShortLabel(block.questions[0])}${block.questions.length > 1 ? ` - ${questionShortLabel(lastQuestion)}` : ""}` : "";
+      return `
+        <article class="calendar-day ${status}">
+          <div class="calendar-day-head">
+            <strong>${escapeHtml(parseDate(block.date).toLocaleDateString("ja-JP", { month: "numeric", day: "numeric" }))}</strong>
+            <span>${escapeHtml(parseDate(block.date).toLocaleDateString("ja-JP", { weekday: "short" }))}</span>
+          </div>
+          <h4>${escapeHtml(block.shortTitle)}</h4>
+          <p>${escapeHtml(questionRange)}</p>
+          <div class="calendar-progress">
+            <span style="width: ${stats.percent}%"></span>
+          </div>
+          <div class="resource-meta">
+            <span class="status-pill">${stats.completed}/${stats.total}問</span>
+            <span class="status-pill ${status === "overdue" ? "review" : status === "done" ? "done" : ""}">${escapeHtml(scheduleStatusLabel(status))}</span>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
 }
 
 function renderReviewQueue() {
@@ -1523,6 +1666,117 @@ function weeklyAllocationFor(subjectId) {
   return weeklyAllocations().find((item) => item.subject.id === subjectId)?.hours || 0;
 }
 
+function buildSchedulePlan(dayCount = SCHEDULE_WINDOW_DAYS) {
+  const start = scheduleStartDate();
+  const dailyMinutes = scheduleDailyMinutes();
+  const questionHours = (dailyMinutes * 0.82) / 60;
+  const usedQuestionIds = new Set();
+  const blocks = [];
+  for (let index = 0; index < dayCount; index += 1) {
+    const date = addDays(start, index);
+    const questionBlock = buildQuestionPlanBlock(usedQuestionIds, questionHours, new Set(), {
+      date,
+      maxQuestions: scheduleDailyQuestionCapacity(),
+      minQuestions: 4,
+    });
+    if (!questionBlock) break;
+    const questions = questionBlock.questionIds.map((id) => questionById(id)).filter(Boolean);
+    questions.forEach((question) => usedQuestionIds.add(question.id));
+    blocks.push({
+      ...questionBlock,
+      id: `schedule-${date}-${questionBlock.questionId}`,
+      date,
+      dayIndex: index,
+      subject: "financial",
+      questions,
+      plannedMinutes: Math.max(1, Math.round(sum(questions.map((question) => Number(question.targetMinutes || 3))))),
+      shortTitle: scheduleShortTitle(questions[0]),
+    });
+  }
+  return blocks;
+}
+
+function summarizeSchedule(schedule) {
+  const allIds = unique(schedule.flatMap((block) => block.questionIds || []));
+  const expectedIds = unique(schedule.filter((block) => block.date <= todayISO()).flatMap((block) => block.questionIds || []));
+  const actualScheduledIds = allIds.filter((id) => questionState(id).attempts.length);
+  const completedExpectedIds = expectedIds.filter((id) => questionState(id).attempts.length);
+  const remainingQuestions = QUESTION_BANK.filter((question) => !questionState(question.id).attempts.length).length;
+  const dailyCapacity = scheduleDailyQuestionCapacity();
+  const daysToFinish = dailyCapacity ? Math.max(0, Math.ceil(remainingQuestions / dailyCapacity) - 1) : 0;
+  return {
+    totalQuestions: allIds.length,
+    expectedByToday: expectedIds.length,
+    actualScheduled: actualScheduledIds.length,
+    completedExpected: completedExpectedIds.length,
+    deltaQuestions: actualScheduledIds.length - expectedIds.length,
+    expectedPct: allIds.length ? Math.round((expectedIds.length / allIds.length) * 100) : 0,
+    actualPct: allIds.length ? Math.round((actualScheduledIds.length / allIds.length) * 100) : 0,
+    plannedHours: sum(schedule.map((block) => block.plannedMinutes / 60)),
+    remainingQuestions,
+    dailyCapacity,
+    estimatedFinishDate: addDays(scheduleStartDate(), daysToFinish),
+  };
+}
+
+function scheduleBlockStats(block) {
+  const ids = block.questionIds || [];
+  const completed = ids.filter((id) => questionState(id).attempts.length).length;
+  return {
+    total: ids.length,
+    completed,
+    percent: ids.length ? Math.round((completed / ids.length) * 100) : 0,
+  };
+}
+
+function scheduleBlockStatus(block, stats) {
+  if (stats.total && stats.completed >= stats.total) return "done";
+  if (block.date < todayISO()) return "overdue";
+  if (block.date === todayISO()) return "today";
+  return "planned";
+}
+
+function scheduleStatusLabel(status) {
+  return {
+    done: "完了",
+    overdue: "遅れ",
+    today: "今日",
+    planned: "予定",
+  }[status] || "予定";
+}
+
+function scheduleShortTitle(question) {
+  if (!question) return "財務会計 問題演習";
+  return `${question.chapter} ${question.source}`;
+}
+
+function questionShortLabel(question) {
+  if (!question) return "";
+  return `${question.no} ${question.title}`;
+}
+
+function scheduleStartDate() {
+  return state.settings.scheduleStartDate || todayISO();
+}
+
+function schedulePaceValue() {
+  return normalizeSchedulePace(Number(state.settings.schedulePace) || 1);
+}
+
+function normalizeSchedulePace(value) {
+  const rounded = Math.round((Number(value) || 1) / SCHEDULE_PACE_STEP) * SCHEDULE_PACE_STEP;
+  return clamp(rounded, SCHEDULE_PACE_MIN, SCHEDULE_PACE_MAX);
+}
+
+function scheduleDailyMinutes() {
+  return Math.max(30, Math.round(((Number(state.settings.weeklyTarget) || 28) * 60 * schedulePaceValue()) / 7));
+}
+
+function scheduleDailyQuestionCapacity() {
+  const avgMinutes = average(QUESTION_BANK.map((question) => Number(question.targetMinutes || 3))) || 3;
+  return clamp(Math.round((scheduleDailyMinutes() * 0.82) / avgMinutes), 4, 28);
+}
+
 function buildWeeklyPlan(allocations) {
   const start = todayISO();
   const blockSize = state.settings.weeklyTarget <= 12 ? 1.5 : 2;
@@ -1582,11 +1836,14 @@ function buildWeeklyPlan(allocations) {
   return blocks.slice(0, 18);
 }
 
-function buildQuestionPlanBlock(usedQuestionIds, hours, usedQuestionGroups = new Set()) {
+function buildQuestionPlanBlock(usedQuestionIds, hours, usedQuestionGroups = new Set(), options = {}) {
   const maxMinutes = Math.max(20, Math.round(hours * 60));
+  const maxQuestions = Number(options.maxQuestions || 12);
+  const minQuestions = Number(options.minQuestions || 4);
+  const dueDate = options.date || todayISO();
   const baseCandidates = QUESTION_BANK
     .filter((question) => !usedQuestionIds.has(question.id))
-    .filter((question) => isQuestionDue(question.id) || questionState(question.id).status === "review")
+    .filter((question) => isQuestionDueOn(question.id, dueDate) || questionState(question.id).status === "review")
     .sort(questionSort);
   const candidates = baseCandidates.filter((question) => !usedQuestionGroups.has(questionGroupKey(question)));
   const seed = candidates[0] || QUESTION_BANK.find((question) => !usedQuestionIds.has(question.id)) || QUESTION_BANK[0];
@@ -1598,7 +1855,7 @@ function buildQuestionPlanBlock(usedQuestionIds, hours, usedQuestionGroups = new
   let minutes = 0;
   for (const question of group.length ? group : [seed]) {
     const target = Math.max(1, Number(question.targetMinutes || 3));
-    if (selected.length >= 12 || (selected.length >= 4 && minutes + target > maxMinutes)) break;
+    if (selected.length >= maxQuestions || (selected.length >= minQuestions && minutes + target > maxMinutes)) break;
     selected.push(question);
     minutes += target;
   }
@@ -2191,8 +2448,12 @@ function scoreRank(score) {
 }
 
 function isQuestionDue(questionId) {
+  return isQuestionDueOn(questionId, todayISO());
+}
+
+function isQuestionDueOn(questionId, date) {
   const saved = questionState(questionId);
-  return saved.status === "new" || saved.nextReview <= todayISO();
+  return saved.status === "new" || saved.nextReview <= date;
 }
 
 function scoredEntries() {
@@ -2479,6 +2740,8 @@ function defaultState() {
       examDate: "2026-12-01",
       weeklyTarget: 28,
       startDate: INITIAL_START_DATE,
+      scheduleStartDate: todayISO(),
+      schedulePace: 1,
     },
     sessions: [],
     paperAttempts: [],
@@ -2774,6 +3037,10 @@ function average(values) {
 
 function sum(values) {
   return values.reduce((total, value) => total + (Number(value) || 0), 0);
+}
+
+function unique(values) {
+  return [...new Set(values)];
 }
 
 function clamp(value, min, max) {
