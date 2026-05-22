@@ -1,7 +1,8 @@
 // Public-safe material inventory. PDF files, local paths, folders, and filenames are intentionally removed.
 window.CPA_MATERIALS = [
   {
-    "id": "pm-001",
+    "id": "mat-a6ca198942a987",
+    "legacyId": "pm-001",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算1",
@@ -11,7 +12,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-002",
+    "id": "mat-d2542db3a102d8",
+    "legacyId": "pm-002",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算2",
@@ -21,7 +23,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-003",
+    "id": "mat-c2ebe28e9ff196",
+    "legacyId": "pm-003",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算3",
@@ -31,7 +34,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-004",
+    "id": "mat-08e924197165be",
+    "legacyId": "pm-004",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算4",
@@ -41,7 +45,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-005",
+    "id": "mat-fd17831209d0da",
+    "legacyId": "pm-005",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算5",
@@ -51,7 +56,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-006",
+    "id": "mat-965e04cdde751b",
+    "legacyId": "pm-006",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算6",
@@ -61,7 +67,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-007",
+    "id": "mat-548bb8df36e7ec",
+    "legacyId": "pm-007",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算7",
@@ -71,7 +78,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-008",
+    "id": "mat-c56cfb546de5e1",
+    "legacyId": "pm-008",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算1",
@@ -81,7 +89,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-009",
+    "id": "mat-8c10db671c1e96",
+    "legacyId": "pm-009",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算2",
@@ -91,7 +100,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-010",
+    "id": "mat-8e9924a113c987",
+    "legacyId": "pm-010",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算3",
@@ -101,7 +111,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-011",
+    "id": "mat-27af4234d4db12",
+    "legacyId": "pm-011",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算4",
@@ -111,7 +122,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-012",
+    "id": "mat-5babbf5c85378c",
+    "legacyId": "pm-012",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算5",
@@ -121,7 +133,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-013",
+    "id": "mat-c00c2e40185fb2",
+    "legacyId": "pm-013",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算6",
@@ -131,7 +144,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-014",
+    "id": "mat-959e42f2e09949",
+    "legacyId": "pm-014",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論短答対策問題集　計算1",
@@ -141,7 +155,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-015",
+    "id": "mat-491e4d2e58f776",
+    "legacyId": "pm-015",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論短答対策問題集　計算2",
@@ -151,7 +166,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-016",
+    "id": "mat-2fa997e283d11b",
+    "legacyId": "pm-016",
     "subject": "financial",
     "type": "Compact summary",
     "title": "財務会計論コンパクトサマリー論点総まとめテキスト　計算1",
@@ -161,7 +177,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-017",
+    "id": "mat-8b69fa80dad96c",
+    "legacyId": "pm-017",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算1 min",
@@ -171,7 +188,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-018",
+    "id": "mat-d2542db3a102d8",
+    "legacyId": "pm-018",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算2",
@@ -181,7 +199,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-019",
+    "id": "mat-c2ebe28e9ff196",
+    "legacyId": "pm-019",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算3",
@@ -191,7 +210,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-020",
+    "id": "mat-08e924197165be",
+    "legacyId": "pm-020",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算4",
@@ -201,7 +221,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-021",
+    "id": "mat-fd17831209d0da",
+    "legacyId": "pm-021",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算5",
@@ -211,7 +232,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-022",
+    "id": "mat-965e04cdde751b",
+    "legacyId": "pm-022",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算6",
@@ -221,7 +243,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-023",
+    "id": "mat-548bb8df36e7ec",
+    "legacyId": "pm-023",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　計算7",
@@ -231,7 +254,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-024",
+    "id": "mat-c56cfb546de5e1",
+    "legacyId": "pm-024",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算1",
@@ -241,7 +265,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-025",
+    "id": "mat-8c10db671c1e96",
+    "legacyId": "pm-025",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算2",
@@ -251,7 +276,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-026",
+    "id": "mat-8e9924a113c987",
+    "legacyId": "pm-026",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算3",
@@ -261,7 +287,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-027",
+    "id": "mat-27af4234d4db12",
+    "legacyId": "pm-027",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算4",
@@ -271,7 +298,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-028",
+    "id": "mat-5babbf5c85378c",
+    "legacyId": "pm-028",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算5",
@@ -281,7 +309,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-029",
+    "id": "mat-c00c2e40185fb2",
+    "legacyId": "pm-029",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論個別計算問題集　計算6",
@@ -291,7 +320,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-030",
+    "id": "mat-959e42f2e09949",
+    "legacyId": "pm-030",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論短答対策問題集　計算1",
@@ -301,7 +331,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-031",
+    "id": "mat-491e4d2e58f776",
+    "legacyId": "pm-031",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論短答対策問題集　計算2",
@@ -311,7 +342,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-032",
+    "id": "mat-92303ccb86649b",
+    "legacyId": "pm-032",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　理論1",
@@ -321,7 +353,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-033",
+    "id": "mat-a0df2f84f874a8",
+    "legacyId": "pm-033",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　理論2",
@@ -331,7 +364,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-034",
+    "id": "mat-d4ba16c4d2a4de",
+    "legacyId": "pm-034",
     "subject": "financial",
     "type": "Textbook",
     "title": "財務会計論テキスト　理論3",
@@ -341,7 +375,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-035",
+    "id": "mat-dc22432568f3ec",
+    "legacyId": "pm-035",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論短答対策問題集　理論1",
@@ -351,7 +386,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-036",
+    "id": "mat-7e377367788e03",
+    "legacyId": "pm-036",
     "subject": "financial",
     "type": "Quiz bank",
     "title": "財務会計論短答対策問題集　理論2",
@@ -361,7 +397,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-037",
+    "id": "mat-7763a4e8ebdad3",
+    "legacyId": "pm-037",
     "subject": "financial",
     "type": "Compact summary",
     "title": "財務会計論コンパクトサマリー　短答論点総まとめテキスト　理論",
@@ -371,7 +408,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-038",
+    "id": "mat-c6194077b4cc13",
+    "legacyId": "pm-038",
     "subject": "management",
     "type": "Textbook",
     "title": "管理会計論テキスト1",
@@ -381,7 +419,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-039",
+    "id": "mat-71e2f1c7c611b8",
+    "legacyId": "pm-039",
     "subject": "management",
     "type": "Textbook",
     "title": "管理会計論テキスト2",
@@ -391,7 +430,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-040",
+    "id": "mat-638ef7c291ba0e",
+    "legacyId": "pm-040",
     "subject": "management",
     "type": "Textbook",
     "title": "管理会計論テキスト3",
@@ -401,7 +441,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-041",
+    "id": "mat-543a4f84f27b11",
+    "legacyId": "pm-041",
     "subject": "management",
     "type": "Textbook",
     "title": "管理会計論テキスト4",
@@ -411,7 +452,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-042",
+    "id": "mat-1a44dee127ac57",
+    "legacyId": "pm-042",
     "subject": "management",
     "type": "Textbook",
     "title": "管理会計論原価計算基準 詳細解説",
@@ -421,7 +463,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-043",
+    "id": "mat-8ee421751f238e",
+    "legacyId": "pm-043",
     "subject": "management",
     "type": "Textbook",
     "title": "管理会計論植田講師レギュラー講義補助レジュメ",
@@ -431,7 +474,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-044",
+    "id": "mat-d2a119d812aa76",
+    "legacyId": "pm-044",
     "subject": "management",
     "type": "Quiz bank",
     "title": "管理会計論個別計算問題集1",
@@ -441,7 +485,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-045",
+    "id": "mat-2467730c589292",
+    "legacyId": "pm-045",
     "subject": "management",
     "type": "Quiz bank",
     "title": "管理会計論個別計算問題集2",
@@ -451,7 +496,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-046",
+    "id": "mat-afe131c1890b15",
+    "legacyId": "pm-046",
     "subject": "management",
     "type": "Quiz bank",
     "title": "管理会計論短答対策問題集　計算編1",
@@ -461,7 +507,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-047",
+    "id": "mat-1fc66e1f781f7b",
+    "legacyId": "pm-047",
     "subject": "management",
     "type": "Quiz bank",
     "title": "管理会計論短答対策問題集　計算編2",
@@ -471,7 +518,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-048",
+    "id": "mat-51b0bc65d11837",
+    "legacyId": "pm-048",
     "subject": "management",
     "type": "Quiz bank",
     "title": "管理会計論短答対策問題集　理論編",
@@ -481,7 +529,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-049",
+    "id": "mat-5fdfc4b4b48447",
+    "legacyId": "pm-049",
     "subject": "management",
     "type": "Compact summary",
     "title": "管理会計論コンパクトサマリー　計算論点総まとめテキスト",
@@ -491,7 +540,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-050",
+    "id": "mat-23bcc09581f8dc",
+    "legacyId": "pm-050",
     "subject": "corporate-law",
     "type": "Textbook",
     "title": "企業法テキスト1",
@@ -501,7 +551,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-051",
+    "id": "mat-b30945736d6233",
+    "legacyId": "pm-051",
     "subject": "corporate-law",
     "type": "Textbook",
     "title": "企業法テキスト2",
@@ -511,7 +562,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-052",
+    "id": "mat-3b91b810ecbbc5",
+    "legacyId": "pm-052",
     "subject": "corporate-law",
     "type": "Textbook",
     "title": "企業法テキスト3",
@@ -521,7 +573,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-053",
+    "id": "mat-41fbc899712676",
+    "legacyId": "pm-053",
     "subject": "corporate-law",
     "type": "Textbook",
     "title": "企業法青木講師入門／レギュラー講義補助レジュメ",
@@ -531,7 +584,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-054",
+    "id": "mat-02f1bf3b455b8f",
+    "legacyId": "pm-054",
     "subject": "corporate-law",
     "type": "Quiz bank",
     "title": "企業法短答対策問題集1",
@@ -541,7 +595,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-055",
+    "id": "mat-5bcc0aa9a71860",
+    "legacyId": "pm-055",
     "subject": "corporate-law",
     "type": "Quiz bank",
     "title": "企業法短答対策問題集2",
@@ -551,7 +606,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-056",
+    "id": "mat-1bfb25cad2b4b2",
+    "legacyId": "pm-056",
     "subject": "corporate-law",
     "type": "Compact summary",
     "title": "企業法コンパクトサマリ－　短答論点総まとめテキスト",
@@ -561,7 +617,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-057",
+    "id": "mat-6a1e76a317cc06",
+    "legacyId": "pm-057",
     "subject": "audit",
     "type": "Textbook",
     "title": "監査論テキスト1",
@@ -571,7 +628,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-058",
+    "id": "mat-56127c07818ad3",
+    "legacyId": "pm-058",
     "subject": "audit",
     "type": "Textbook",
     "title": "監査論テキスト2",
@@ -581,7 +639,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-059",
+    "id": "mat-a481ae44d6de04",
+    "legacyId": "pm-059",
     "subject": "audit",
     "type": "Textbook",
     "title": "監査論テキスト3",
@@ -591,7 +650,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-060",
+    "id": "mat-ba3860eb4d5973",
+    "legacyId": "pm-060",
     "subject": "audit",
     "type": "Textbook",
     "title": "監査論資料集",
@@ -601,7 +661,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-061",
+    "id": "mat-03bbcbf1af786b",
+    "legacyId": "pm-061",
     "subject": "audit",
     "type": "Quiz bank",
     "title": "監査論短答対策問題集1",
@@ -611,7 +672,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-062",
+    "id": "mat-c307633922ca6a",
+    "legacyId": "pm-062",
     "subject": "audit",
     "type": "Quiz bank",
     "title": "監査論短答対策問題集2",
@@ -621,7 +683,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-063",
+    "id": "mat-5029712a97d4b8",
+    "legacyId": "pm-063",
     "subject": "audit",
     "type": "Compact summary",
     "title": "監査論コンパクトサマリ－短答論点総まとめテキスト",
@@ -631,7 +694,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-064",
+    "id": "mat-d50bce0a2f0c1e",
+    "legacyId": "pm-064",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算1",
@@ -641,7 +705,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-065",
+    "id": "mat-4f89f7b5c1a095",
+    "legacyId": "pm-065",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算10",
@@ -651,7 +716,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-066",
+    "id": "mat-b7bd42d94f70b4",
+    "legacyId": "pm-066",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算11",
@@ -661,7 +727,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-067",
+    "id": "mat-8ca9e9ec2be7bf",
+    "legacyId": "pm-067",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算12",
@@ -671,7 +738,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-068",
+    "id": "mat-d06e8e0d65a313",
+    "legacyId": "pm-068",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算2",
@@ -681,7 +749,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-069",
+    "id": "mat-7a383e75b6de3c",
+    "legacyId": "pm-069",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算3",
@@ -691,7 +760,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-070",
+    "id": "mat-d22c85d4580258",
+    "legacyId": "pm-070",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算4",
@@ -701,7 +771,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-071",
+    "id": "mat-e2f7b7bcfc89c5",
+    "legacyId": "pm-071",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算5",
@@ -711,7 +782,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-072",
+    "id": "mat-dd4dcb7c129cd8",
+    "legacyId": "pm-072",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算6",
@@ -721,7 +793,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-073",
+    "id": "mat-713ce556a00237",
+    "legacyId": "pm-073",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算7",
@@ -731,7 +804,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-074",
+    "id": "mat-ed7fa22bf9e46f",
+    "legacyId": "pm-074",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算8",
@@ -741,7 +815,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-075",
+    "id": "mat-0529e2bd731423",
+    "legacyId": "pm-075",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務計算9",
@@ -751,7 +826,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-076",
+    "id": "mat-6611eaf4643399",
+    "legacyId": "pm-076",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務理論1",
@@ -761,7 +837,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-077",
+    "id": "mat-48b0070988290b",
+    "legacyId": "pm-077",
     "subject": "final-review",
     "type": "Drill",
     "title": "財務理論2",
@@ -771,7 +848,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-078",
+    "id": "mat-ae15d3e1bec31e",
+    "legacyId": "pm-078",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理1",
@@ -781,7 +859,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-079",
+    "id": "mat-80a94d87ba43ad",
+    "legacyId": "pm-079",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理2",
@@ -791,7 +870,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-080",
+    "id": "mat-b5bbe4f8a02eb6",
+    "legacyId": "pm-080",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理3",
@@ -801,7 +881,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-081",
+    "id": "mat-e13784c6c3077b",
+    "legacyId": "pm-081",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理4 ",
@@ -811,7 +892,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-082",
+    "id": "mat-927728df6f4688",
+    "legacyId": "pm-082",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理5",
@@ -821,7 +903,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-083",
+    "id": "mat-4a8ea989bd0d77",
+    "legacyId": "pm-083",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理6",
@@ -831,7 +914,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-084",
+    "id": "mat-a9bf8cdf13b1b7",
+    "legacyId": "pm-084",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理7",
@@ -841,7 +925,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-085",
+    "id": "mat-a9fc7151a91aab",
+    "legacyId": "pm-085",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理8",
@@ -851,7 +936,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-086",
+    "id": "mat-4ed576161230d6",
+    "legacyId": "pm-086",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理9",
@@ -861,7 +947,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-087",
+    "id": "mat-93571ad32f9f08",
+    "legacyId": "pm-087",
     "subject": "final-review",
     "type": "Drill",
     "title": "管理確認1",
@@ -871,7 +958,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-088",
+    "id": "mat-4420feac1e5447",
+    "legacyId": "pm-088",
     "subject": "final-review",
     "type": "Admin",
     "title": "受験票・写真票",
@@ -881,7 +969,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-089",
+    "id": "mat-76870b0ad3fec8",
+    "legacyId": "pm-089",
     "subject": "financial",
     "type": "Past paper",
     "title": "2019_H31-1",
@@ -891,7 +980,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-090",
+    "id": "mat-a2e66a0fc24a41",
+    "legacyId": "pm-090",
     "subject": "financial",
     "type": "Past paper",
     "title": "2019_H31-2",
@@ -901,7 +991,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-091",
+    "id": "mat-4c5e687641766a",
+    "legacyId": "pm-091",
     "subject": "financial",
     "type": "Past paper",
     "title": "2020_R2-1",
@@ -911,7 +1002,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-092",
+    "id": "mat-71fd9b57ce8d2b",
+    "legacyId": "pm-092",
     "subject": "financial",
     "type": "Past paper",
     "title": "2020_R2-2",
@@ -921,7 +1013,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-093",
+    "id": "mat-a9452f94254ca3",
+    "legacyId": "pm-093",
     "subject": "financial",
     "type": "Past paper",
     "title": "2021_R3",
@@ -931,7 +1024,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-094",
+    "id": "mat-d75f7d838dfb8b",
+    "legacyId": "pm-094",
     "subject": "financial",
     "type": "Past paper",
     "title": "2022_R4-1",
@@ -941,7 +1035,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-095",
+    "id": "mat-4bcaab11d98e57",
+    "legacyId": "pm-095",
     "subject": "financial",
     "type": "Past paper",
     "title": "2022_R4-2",
@@ -951,7 +1046,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-096",
+    "id": "mat-9d84a4de75df19",
+    "legacyId": "pm-096",
     "subject": "financial",
     "type": "Past paper",
     "title": "2023_R5-1",
@@ -961,7 +1057,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-097",
+    "id": "mat-fff2b245f3b3a7",
+    "legacyId": "pm-097",
     "subject": "financial",
     "type": "Past paper",
     "title": "2023_R5-2",
@@ -971,7 +1068,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-098",
+    "id": "mat-bb1fea50aaab56",
+    "legacyId": "pm-098",
     "subject": "financial",
     "type": "Past paper",
     "title": "2024_R6-1",
@@ -981,7 +1079,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-099",
+    "id": "mat-61a3de6652f62c",
+    "legacyId": "pm-099",
     "subject": "financial",
     "type": "Past paper",
     "title": "2024_R6-2",
@@ -991,7 +1090,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-100",
+    "id": "mat-52d7b8b6666061",
+    "legacyId": "pm-100",
     "subject": "financial",
     "type": "Past paper",
     "title": "2025_R7-1",
@@ -1001,7 +1101,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-101",
+    "id": "mat-0f3546e7d262aa",
+    "legacyId": "pm-101",
     "subject": "financial",
     "type": "Past paper",
     "title": "2025_R7-2",
@@ -1011,7 +1112,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-102",
+    "id": "mat-2757c270ec6590",
+    "legacyId": "pm-102",
     "subject": "financial",
     "type": "Past paper",
     "title": "2026_R8-1",
@@ -1021,7 +1123,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-103",
+    "id": "mat-99a2a56eb7ab26",
+    "legacyId": "pm-103",
     "subject": "management",
     "type": "Past paper",
     "title": "2019_H31-1",
@@ -1031,7 +1134,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-104",
+    "id": "mat-2bddf2e998fcbb",
+    "legacyId": "pm-104",
     "subject": "management",
     "type": "Past paper",
     "title": "2019_H31-2",
@@ -1041,7 +1145,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-105",
+    "id": "mat-4a68c126523148",
+    "legacyId": "pm-105",
     "subject": "management",
     "type": "Past paper",
     "title": "2020_R2-1",
@@ -1051,7 +1156,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-106",
+    "id": "mat-46df254603073b",
+    "legacyId": "pm-106",
     "subject": "management",
     "type": "Past paper",
     "title": "2020_R2-2",
@@ -1061,7 +1167,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-107",
+    "id": "mat-fda217cbc5f1f6",
+    "legacyId": "pm-107",
     "subject": "management",
     "type": "Past paper",
     "title": "2021_R3",
@@ -1071,7 +1178,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-108",
+    "id": "mat-90ad64cc0c6af6",
+    "legacyId": "pm-108",
     "subject": "management",
     "type": "Past paper",
     "title": "2022_R4-1",
@@ -1081,7 +1189,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-109",
+    "id": "mat-3406e10ac05d7c",
+    "legacyId": "pm-109",
     "subject": "management",
     "type": "Past paper",
     "title": "2022_R4-2",
@@ -1091,7 +1200,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-110",
+    "id": "mat-89bfe12fa04f33",
+    "legacyId": "pm-110",
     "subject": "management",
     "type": "Past paper",
     "title": "2023_R5-1",
@@ -1101,7 +1211,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-111",
+    "id": "mat-67e30d66f42509",
+    "legacyId": "pm-111",
     "subject": "management",
     "type": "Past paper",
     "title": "2023_R5-2",
@@ -1111,7 +1222,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-112",
+    "id": "mat-b30ebd91799809",
+    "legacyId": "pm-112",
     "subject": "management",
     "type": "Past paper",
     "title": "2024_R6-1",
@@ -1121,7 +1233,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-113",
+    "id": "mat-820836ea34c6f6",
+    "legacyId": "pm-113",
     "subject": "management",
     "type": "Past paper",
     "title": "2024_R6-2",
@@ -1131,7 +1244,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-114",
+    "id": "mat-eff0561ae2fd37",
+    "legacyId": "pm-114",
     "subject": "management",
     "type": "Past paper",
     "title": "2025_R7-1",
@@ -1141,7 +1255,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-115",
+    "id": "mat-1ec948b632aab9",
+    "legacyId": "pm-115",
     "subject": "management",
     "type": "Past paper",
     "title": "2025_R7-2",
@@ -1151,7 +1266,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-116",
+    "id": "mat-d80c029add4577",
+    "legacyId": "pm-116",
     "subject": "management",
     "type": "Past paper",
     "title": "2026_R8-1",
@@ -1161,7 +1277,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-117",
+    "id": "mat-2907a15cdbda03",
+    "legacyId": "pm-117",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2019_H31-1",
@@ -1171,7 +1288,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-118",
+    "id": "mat-728789ca933617",
+    "legacyId": "pm-118",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2019_H31-2",
@@ -1181,7 +1299,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-119",
+    "id": "mat-e4590bef3a4561",
+    "legacyId": "pm-119",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2020_R2-1",
@@ -1191,7 +1310,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-120",
+    "id": "mat-824863e38f17b0",
+    "legacyId": "pm-120",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2020_R2-2",
@@ -1201,7 +1321,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-121",
+    "id": "mat-7c751d2d9e1992",
+    "legacyId": "pm-121",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2021_R3",
@@ -1211,7 +1332,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-122",
+    "id": "mat-694256be778650",
+    "legacyId": "pm-122",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2022_R4-1",
@@ -1221,7 +1343,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-123",
+    "id": "mat-8f5d5d43f05960",
+    "legacyId": "pm-123",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2022_R4-2",
@@ -1231,7 +1354,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-124",
+    "id": "mat-266ededdad9036",
+    "legacyId": "pm-124",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2023_R5-1",
@@ -1241,7 +1365,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-125",
+    "id": "mat-eab49b3dd12f7a",
+    "legacyId": "pm-125",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2023_R5-2",
@@ -1251,7 +1376,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-126",
+    "id": "mat-4295c0c5948e7d",
+    "legacyId": "pm-126",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2024_R6-1",
@@ -1261,7 +1387,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-127",
+    "id": "mat-2897b11f16b880",
+    "legacyId": "pm-127",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2024_R6-2",
@@ -1271,7 +1398,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-128",
+    "id": "mat-36d4cf7ac516a4",
+    "legacyId": "pm-128",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2025_R7-1",
@@ -1281,7 +1409,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-129",
+    "id": "mat-da67cfcf5a9a5b",
+    "legacyId": "pm-129",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2025_R7-2",
@@ -1291,7 +1420,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-130",
+    "id": "mat-96ebe1a1ffb878",
+    "legacyId": "pm-130",
     "subject": "corporate-law",
     "type": "Past paper",
     "title": "2026_R8-1",
@@ -1301,7 +1431,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-131",
+    "id": "mat-57ca21733fe4ab",
+    "legacyId": "pm-131",
     "subject": "audit",
     "type": "Past paper",
     "title": "2019_H31-1",
@@ -1311,7 +1442,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-132",
+    "id": "mat-8207f19b23885c",
+    "legacyId": "pm-132",
     "subject": "audit",
     "type": "Past paper",
     "title": "2019_H31-2",
@@ -1321,7 +1453,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-133",
+    "id": "mat-8b713768a05b91",
+    "legacyId": "pm-133",
     "subject": "audit",
     "type": "Past paper",
     "title": "2020_R2-1",
@@ -1331,7 +1464,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-134",
+    "id": "mat-fe59fab33347ae",
+    "legacyId": "pm-134",
     "subject": "audit",
     "type": "Past paper",
     "title": "2020_R2-2",
@@ -1341,7 +1475,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-135",
+    "id": "mat-30258ab1f02f6a",
+    "legacyId": "pm-135",
     "subject": "audit",
     "type": "Past paper",
     "title": "2021_R3",
@@ -1351,7 +1486,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-136",
+    "id": "mat-3f1192a816ddea",
+    "legacyId": "pm-136",
     "subject": "audit",
     "type": "Past paper",
     "title": "2022_R4-1",
@@ -1361,7 +1497,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-137",
+    "id": "mat-a2dd509ca3aaae",
+    "legacyId": "pm-137",
     "subject": "audit",
     "type": "Past paper",
     "title": "2022_R4-2",
@@ -1371,7 +1508,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-138",
+    "id": "mat-51e02eb8414110",
+    "legacyId": "pm-138",
     "subject": "audit",
     "type": "Past paper",
     "title": "2023_R5-1",
@@ -1381,7 +1519,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-139",
+    "id": "mat-2fa3f0587de9e6",
+    "legacyId": "pm-139",
     "subject": "audit",
     "type": "Past paper",
     "title": "2023_R5-2",
@@ -1391,7 +1530,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-140",
+    "id": "mat-37fd59794301e8",
+    "legacyId": "pm-140",
     "subject": "audit",
     "type": "Past paper",
     "title": "2024_R6-1",
@@ -1401,7 +1541,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-141",
+    "id": "mat-d9d9a9f8573d3e",
+    "legacyId": "pm-141",
     "subject": "audit",
     "type": "Past paper",
     "title": "2024_R6-2",
@@ -1411,7 +1552,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-142",
+    "id": "mat-ea14b046cdf8d6",
+    "legacyId": "pm-142",
     "subject": "audit",
     "type": "Past paper",
     "title": "2025_R7-1",
@@ -1421,7 +1563,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-143",
+    "id": "mat-2f6ad464fa2083",
+    "legacyId": "pm-143",
     "subject": "audit",
     "type": "Past paper",
     "title": "2025_R7-2",
@@ -1431,7 +1574,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-144",
+    "id": "mat-1647bfb0cedad2",
+    "legacyId": "pm-144",
     "subject": "audit",
     "type": "Past paper",
     "title": "2026_R8-1",
@@ -1441,7 +1585,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-145",
+    "id": "mat-161a430f1d4fe6",
+    "legacyId": "pm-145",
     "subject": "business-admin",
     "type": "Compact summary",
     "title": "経営学コンパクトサマリー1",
@@ -1451,7 +1596,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-146",
+    "id": "mat-0fc340ed0824e4",
+    "legacyId": "pm-146",
     "subject": "business-admin",
     "type": "Compact summary",
     "title": "経営学コンパクトサマリー2",
@@ -1461,7 +1607,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-147",
+    "id": "mat-431f57f2eb7c7e",
+    "legacyId": "pm-147",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学MasterKey 論文対策講義植田レジュメ下巻",
@@ -1471,7 +1618,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-148",
+    "id": "mat-27f0289e73d8ff",
+    "legacyId": "pm-148",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学MasterKey 論文対策講義植田レジュメ上巻",
@@ -1481,7 +1629,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-149",
+    "id": "mat-2c44eba9025a3b",
+    "legacyId": "pm-149",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学テキスト 経営管理1",
@@ -1491,7 +1640,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-150",
+    "id": "mat-41c68d47672caf",
+    "legacyId": "pm-150",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学テキスト 経営管理2",
@@ -1501,7 +1651,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-151",
+    "id": "mat-56d103a97ae1ed",
+    "legacyId": "pm-151",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学テキスト 財務管理1",
@@ -1511,7 +1662,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-152",
+    "id": "mat-63b5edf38e25dd",
+    "legacyId": "pm-152",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学テキスト 財務管理2",
@@ -1521,7 +1673,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-153",
+    "id": "mat-c1e0f951f83d94",
+    "legacyId": "pm-153",
     "subject": "business-admin",
     "type": "Textbook",
     "title": "経営学速習講義 速習講義レジュメ1",
@@ -1531,7 +1684,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-154",
+    "id": "mat-d5c89dd9e6eb77",
+    "legacyId": "pm-154",
     "subject": "business-admin",
     "type": "Past paper",
     "title": "経営学過去問題集",
@@ -1541,7 +1695,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-155",
+    "id": "mat-9b6de460dadeb7",
+    "legacyId": "pm-155",
     "subject": "business-admin",
     "type": "Quiz bank",
     "title": "経営学個別問題集 経営管理3",
@@ -1551,7 +1706,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-156",
+    "id": "mat-3b534b0bd1c23b",
+    "legacyId": "pm-156",
     "subject": "business-admin",
     "type": "Quiz bank",
     "title": "経営学個別問題集 財務管理1",
@@ -1561,7 +1717,8 @@ window.CPA_MATERIALS = [
     "publicOnly": true
   },
   {
-    "id": "pm-157",
+    "id": "mat-30c3e4eead5f85",
+    "legacyId": "pm-157",
     "subject": "business-admin",
     "type": "Quiz bank",
     "title": "経営学個別問題集 財務管理2",
